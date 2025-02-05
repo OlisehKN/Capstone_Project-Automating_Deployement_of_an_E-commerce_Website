@@ -95,3 +95,15 @@
   **Steps:**
 
   - Integrate Jenkins with the source code management repository (e.g. GitHub, Bitbucket).
+
+      - Firstly, I created a GitHub repository called "Jenkins-Server" and copy the repository URL
+
+    ![Screenshot (303)](https://github.com/user-attachments/assets/c906ff42-4ffc-4cac-9185-26453524bf3a)
+
+      - then, I enter the repository URL into the source code management section of the Jenkins configuration
+
+    ![Screenshot (304)](https://github.com/user-attachments/assets/75e3d308-98bb-4bb9-8b12-5ec89d704d72)
+    ![Screenshot (305)](https://github.com/user-attachments/assets/c0aab28f-b8fa-44f8-b47a-b80c4762689a)
+
+
+
