@@ -13,3 +13,39 @@
 
   - Install Jenkins on a dedicated server.
 
+    - Firstly, I update the server with the following command line
+
+          sudo apt update
+
+    - Then, I install Java before installing Jenkins
+
+          sudo apt install default-jre
+
+
+    - Then, we confirm that Java is running on the server
+   
+          java -version
+
+  - Installing Jenkins
+
+      - Firstly, i added the GPG Key
+
+            sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+
+      - Secondly, I added the Jenkins Repository
+
+            echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+      - Thirdly, I load the latest packages
+
+            sudo apt update
+
+      - Finally, I install Jenkins in the server
+
+            sudo apt install jenkins
+
+      - I check to confirm that Jenkins is running on the server
+
+            jenkins --version
+
+  
