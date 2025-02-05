@@ -48,4 +48,20 @@
 
             jenkins --version
 
-  
+  - Set up necessary plugins (Git, Docker, etc.)
+
+      - I create new inbound rules for port 8080 in security group for the Jenkins Server
+
+      - I opened my jenkins instance IP address on my web browser with port 8080
+   
+      - On my Jenkins instance, i used the following command line to know my password
+   
+            sudo cat /var/lib/jenkins/secrets/initialAdminPassword 
+    
+      - Install the plugins
+
+  - Configure Jenkins with required security measures.
+
+      - I created a new username and password which i will use to log in to the jenkins instance
+   
+        
