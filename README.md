@@ -105,5 +105,33 @@
     ![Screenshot (304)](https://github.com/user-attachments/assets/75e3d308-98bb-4bb9-8b12-5ec89d704d72)
     ![Screenshot (305)](https://github.com/user-attachments/assets/c0aab28f-b8fa-44f8-b47a-b80c4762689a)
 
+  - Configure webhooks for automatic triggering of Jenkins builds.
 
+      - On the Github page of "Jenkins-Server", i clicked on the settings tab and navigated down to the webhooks section. I input the IP address and Port number for the Jenkins Instance and select "application/json" as the content type.
+
+    ![Screenshot (307)](https://github.com/user-attachments/assets/7deb3cae-2d69-48e2-9511-b22f101790a7)
+
+### 3.) <ins>Jenkins Freestyle Jobs for Build and Unit Tests</ins>
+
+  **Objective:** Create Jenkins Freestyle jobs for building a web application and running unit tests.
+
+  **Steps:**
+
+  - Set up a Freestyle job for building the application.
+
+      - From the Jenkins Dashboard on the left side, i clicked on "new item". I named it "First Jenkins Job" and selected Freestyle project.
+
+    ![Screenshot (300)](https://github.com/user-attachments/assets/4bd23beb-408b-4a7d-9292-cb4a941ea25f)
+
+### 4.) <ins>Jenkins Pipeline for Web Application</ins>
+
+  **Objective:** Develop a Jenkins Pipeline for running a web application.
+
+  **Steps:** 
+  
+  - Create a Jenkins Pipeline script to run a web application.
+
+      - 
+
+  
 
