@@ -195,3 +195,46 @@
 
     ![Screenshot (320)](https://github.com/user-attachments/assets/b7ec6500-0e07-4680-888b-c5b43a2299bd)
 
+### 5.) <ins>Docker Image Creation and Registry Push</ins>
+
+  **Objective:** Automate the creation of Docker images for the web application and push them to a container registry such as docker hub.
+
+  **Steps:**
+
+  - Configure Jenkins to build Docker images
+
+    <ins>Installing Docker</ins>
+
+      - I created a file named "docker.sh" on the instance with the touch command line.
+
+    ![Screenshot (321)](https://github.com/user-attachments/assets/56d45967-d415-49a5-91ba-4f80a133122a)
+
+      - I opened the file, with "vim" command, and pasted the script below:
+            
+                      sudo apt-get update -y
+            sudo apt-get install ca-certificates curl gnupg
+            sudo install -m 0755 -d /etc/apt/keyrings
+            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+            sudo chmod a+r /etc/apt/keyrings/docker.gpg
+            
+            # Add the repository to Apt sources:
+            echo \
+              "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+              $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+              sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+            sudo apt-get update -y
+            sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+            sudo systemctl status docker
+
+    ![Screenshot (322)](https://github.com/user-attachments/assets/84318511-19c9-47e1-ad4a-28fcc4743b0c)
+
+    ![Screenshot (323)](https://github.com/user-attachments/assets/96609417-8324-4f1d-a249-f6c8d9a2acc5)
+
+      - Then, made the file executable with "chmod u+x" command line.
+
+    ![Screenshot (324)](https://github.com/user-attachments/assets/deac3cbc-90b2-4268-af11-bd4de0895e54)
+
+      - Lastly, i executed the script with the command line "./docker.sh"
+   
+    ![Screenshot (326)](https://github.com/user-attachments/assets/df7086ab-33e3-4047-8ff5-2d262b6e7455)
+
