@@ -131,7 +131,67 @@
   
   - Create a Jenkins Pipeline script to run a web application.
 
-      - 
+    <ins>Creating the Pipeline</ins>
 
-  
+      - From the Jenkins Deashboard menu on the left side, I clicked on "new item".
+
+    ![Screenshot (309)](https://github.com/user-attachments/assets/0baeeac3-1afb-486d-a764-36e9e750de15)
+
+      - Then i named the new item, "First Jenkins Pipeline" and selected the pipeline option to create a pipeline.
+
+    ![Screenshot (310)](https://github.com/user-attachments/assets/aa5fda87-5d54-4608-bba5-db25549da978)
+
+      - Then, as i did previously with the freestyle job, i configured the pipeline with the same Github hook build trigger
+
+    ![Screenshot (311)](https://github.com/user-attachments/assets/b3874020-61d1-4145-a720-28d8d929586c)
+
+    <ins>Writing Jenkins Pipeline Script</ins>
+
+      - I entered this pipeline script into the pipeline configuration.
+
+                          pipeline \{
+                      agent any
+                  
+                      stages \{
+                          stage('Connect To Github') \{
+                              steps \{
+                                      checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/OlisehKN/Jenkins-Server.git']])
+                              \}
+                          \}
+                          stage('Build Docker Image') \{
+                              steps \{
+                                  script \{
+                                      sh 'docker build -t dockerfile .'
+                                  \}
+                              \}
+                          \}
+                          stage('Run Docker Container') \{
+                              steps \{
+                                  script \{
+                                      sh 'docker run -itd -p 8081:80 dockerfile'
+                                  \}
+                              \}
+                          \}
+                      \}
+                  \}
+
+     - Next, i click on the "pipeline syntax" button below the script and search for and select "Checkout: check out from version control"
+
+    ![Screenshot (312)](https://github.com/user-attachments/assets/3c123f5c-fbfa-49a9-bbaf-0f8bfb52d8e7)
+
+    ![Screenshot (313)](https://github.com/user-attachments/assets/5fbf1d4e-ae7e-43fd-940a-bc62929e07bf)
+
+     - I add my Github repository URL and make sure that the "main" branch is selected.
+
+    ![Screenshot (317)](https://github.com/user-attachments/assets/82b22549-daad-4e09-99e4-00e589507c93)
+
+     - Then generate the pipeline script
+
+    ![Screenshot (318)](https://github.com/user-attachments/assets/aa19d8d2-2270-4737-83e5-7194ab0d6a8d)
+
+     - Lastly, i replace the former script under the "Connect Github" stage, with the newly generated script.
+   
+    ![Screenshot (319)](https://github.com/user-attachments/assets/1a9ebab8-adf6-4e5f-a569-59e38902379b)
+
+    ![Screenshot (320)](https://github.com/user-attachments/assets/b7ec6500-0e07-4680-888b-c5b43a2299bd)
 
